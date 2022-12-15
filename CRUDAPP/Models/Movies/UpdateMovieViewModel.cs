@@ -1,7 +1,7 @@
 ﻿using System;
 namespace CRUDAPP.Models
 {
-    public class UpdateMovieViewModel
+    public class UpdateMovieViewModel: IMovie
     {
         public Guid Id { get; set; }
         public string Title { get; set; }

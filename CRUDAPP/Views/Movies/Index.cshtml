@@ -1,0 +1,32 @@
+﻿@model List<CRUDAPP.Models.Domain.Movie>
+
+<h1>Movies list</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Director</th>
+            <th>Production date</th>
+            <th>Genere</th>
+            <th>Rating</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var movie in Model)
+            {
+                <tr>
+                    <td>@movie.Id</td>
+                    <td>@movie.Title</td>
+                    <td>@movie.Director</td>
+                    <td>@movie.Production.ToString("ddd dd MMMM yyyy")</td>
+                    <td>@movie.Genere</td>
+                    <td>@movie.Rating</td>
+                    <td><a type="button" class="btn btn-light" href="Movies/View/@movie.Id" Views>View</a></td>
+                </tr>
+            }
+    </tbody>
+</table>
+

@@ -1,0 +1,36 @@
+﻿@model CRUDAPP.Models.UpdateMovieViewModel
+
+<h1>Add a new movie</h1>
+<form method="post" action="Add" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label">Id</label>
+        <input type="text" class="form-control" asp-for="Id" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Title</label>
+        <input type="text" class="form-control" asp-for="Title">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Director</label>
+        <input type="text" class="form-control" asp-for="Director">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Production date</label>
+        <input type="date" class="form-control" asp-for="Production">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Genere</label>
+        <input type="text" class="form-control" asp-for="Genere">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Rating</label>
+        <input type="number" class="form-control" asp-for="Rating">
+    </div>
+
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Submit</button>
+        <button type="submit" class="btn btn-danger mb-3"
+                asp-action="Delete"
+                asp-controller="Movies">Delete</button>
+    </div>
+</form>

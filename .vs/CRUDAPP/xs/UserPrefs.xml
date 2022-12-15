@@ -1,0 +1,39 @@
+﻿<Properties StartupConfiguration="{700A357B-2E66-4B99-95E3-B77C126336B2}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CRUDAPP/appsettings.json">
+    <Files>
+      <File FileName="CRUDAPP/appsettings.json" Line="16" Column="1" />
+      <File FileName="CRUDAPP/Data/CRUDAPPDbContext.cs" Line="1" Column="1" />
+      <File FileName="CRUDAPP/Controllers/HomeController.cs" Line="1" Column="1" />
+      <File FileName="CRUDAPP/Models/Domain/Movie.cs" Line="1" Column="1" />
+      <File FileName="CRUDAPP/Properties/launchSettings.json" Line="1" Column="1" />
+      <File FileName="CRUDAPP/Program.cs" Line="9" Column="25" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CRUDAPP" expanded="True">
+            <Node name="CRUDAPP" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Domain" expanded="True" />
+              </Node>
+              <Node name="Properties" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.CRUDAPP PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+</Properties>

@@ -1,7 +1,7 @@
 ﻿using System;
 namespace CRUDAPP.Models.Domain
 {
-    public class Movie
+    public class Movie : IMovie
     {
         public Guid Id { get; set; }
         public string Title { get; set; }

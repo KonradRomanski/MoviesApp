@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/konrad/Documents/PUT/PUT VII/PW/Project/CRUDAPP/CRUDAPP/CRUDAPP.csproj": {}
+    "C:\\Users\\User\\Source\\Repos\\KonradRomanski\\MoviesApp\\CRUDAPP\\CRUDAPP.csproj": {}
   },
   "projects": {
-    "/Users/konrad/Documents/PUT/PUT VII/PW/Project/CRUDAPP/CRUDAPP/CRUDAPP.csproj": {
+    "C:\\Users\\User\\Source\\Repos\\KonradRomanski\\MoviesApp\\CRUDAPP\\CRUDAPP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/konrad/Documents/PUT/PUT VII/PW/Project/CRUDAPP/CRUDAPP/CRUDAPP.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\KonradRomanski\\MoviesApp\\CRUDAPP\\CRUDAPP.csproj",
         "projectName": "CRUDAPP",
-        "projectPath": "/Users/konrad/Documents/PUT/PUT VII/PW/Project/CRUDAPP/CRUDAPP/CRUDAPP.csproj",
-        "packagesPath": "/Users/konrad/.nuget/packages/",
-        "outputPath": "/Users/konrad/Documents/PUT/PUT VII/PW/Project/CRUDAPP/CRUDAPP/obj/",
+        "projectPath": "C:\\Users\\User\\Source\\Repos\\KonradRomanski\\MoviesApp\\CRUDAPP\\CRUDAPP.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Source\\Repos\\KonradRomanski\\MoviesApp\\CRUDAPP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/konrad/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -63,7 +65,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -75,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/6.0.105/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

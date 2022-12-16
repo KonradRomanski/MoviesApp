@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CRUDAPP.Data;
 using CRUDAPP.Models;
-using CRUDAPP.Models.Director;
+using CRUDAPP.Models.Directors;
 using CRUDAPP.Models.Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

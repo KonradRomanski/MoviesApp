@@ -1,5 +1,5 @@
 ﻿using System;
-using CRUDAPP.Models.Director;
+using CRUDAPP.Models.Directors;
 
 namespace CRUDAPP.Models.Domain
 {

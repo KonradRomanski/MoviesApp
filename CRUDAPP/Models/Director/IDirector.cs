@@ -1,7 +1,7 @@
 ﻿using System;
 using CRUDAPP.Models.Domain;
 
-namespace CRUDAPP.Models.Director
+namespace CRUDAPP.Models.Directors
 {
     public interface IDirector
     {

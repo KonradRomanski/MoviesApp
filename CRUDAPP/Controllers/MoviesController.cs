@@ -39,7 +39,7 @@ namespace CRUDAPP.Controllers
             {
                 Id = Guid.NewGuid(),
                 Title = AddMovieReques.Title,
-                Director = AddMovieReques.Director,
+                DirectorId = AddMovieReques.DirectorId,
                 Production = AddMovieReques.Production,
                 Genere = AddMovieReques.Genere,
                 Rating = AddMovieReques.Rating
@@ -61,7 +61,7 @@ namespace CRUDAPP.Controllers
                 {
                     Id = movie.Id,
                     Title = movie.Title,
-                    Director = movie.Director,
+                    DirectorId = movie.DirectorId,
                     Production = movie.Production,
                     Genere = movie.Genere,
                     Rating = movie.Rating
@@ -83,7 +83,7 @@ namespace CRUDAPP.Controllers
             {
                 movie.Id = model.Id;
                 movie.Title = model.Title;
-                movie.Director = model.Director;
+                movie.DirectorId = model.DirectorId;
                 movie.Production = model.Production;
                 movie.Genere = model.Genere;
                 movie.Rating = model.Rating;

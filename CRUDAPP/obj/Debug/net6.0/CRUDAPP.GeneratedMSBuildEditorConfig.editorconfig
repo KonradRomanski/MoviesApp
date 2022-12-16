@@ -15,6 +15,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/konrad/Documents/PUT/PUT VII/PW/Project/CRUDAPP/CRUDAPP
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/konrad/Documents/PUT/PUT VII/PW/Project/CRUDAPP/CRUDAPP/Views/Directors/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlyZWN0b3JzL0FkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/konrad/Documents/PUT/PUT VII/PW/Project/CRUDAPP/CRUDAPP/Views/Directors/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlyZWN0b3JzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/konrad/Documents/PUT/PUT VII/PW/Project/CRUDAPP/CRUDAPP/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

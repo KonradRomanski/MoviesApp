@@ -1,9 +1,12 @@
 ﻿ using System;
+using System.IO;
 using CRUDAPP.Data;
 using CRUDAPP.Models;
 using CRUDAPP.Models.Domain;
+using CRUDAPP.Models.Movies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace CRUDAPP.Controllers
 {
@@ -20,8 +23,20 @@ namespace CRUDAPP.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var movies = await crudAppDbContext.Movies.ToListAsync();
-            return View(movies);
+            var movies = from m in crudAppDbContext.Movies
+                         join d in crudAppDbContext.Directors on m.DirectorId equals d.Id
+                         select new { Movie = m, Director = d };
+            var viewModel = movies.Select(m => new ShowMovieViewModel
+            {
+                Id = m.Movie.Id,
+                Title = m.Movie.Title,
+                Production = m.Movie.Production,
+                Genere = m.Movie.Genere,
+                Rating = m.Movie.Rating,
+                Director = m.Director
+            }).ToList();
+
+            return View(viewModel);
         }
 
         public CRUDAPPDbContext CrudAppDbContext { get; set; }
@@ -66,7 +81,10 @@ namespace CRUDAPP.Controllers
                     DirectorId = movie.DirectorId,
                     Production = movie.Production,
                     Genere = movie.Genere,
-                    Rating = movie.Rating
+                    Rating = movie.Rating,
+                    Directors = await crudAppDbContext.Directors.ToListAsync(),
+                    SelectedDirectorId = movie.DirectorId
+
                 };
                 return await Task.Run(() => View("View", viewMovie));
             }
@@ -85,7 +103,7 @@ namespace CRUDAPP.Controllers
             {
                 movie.Id = model.Id;
                 movie.Title = model.Title;
-                movie.DirectorId = model.DirectorId;
+                movie.DirectorId = model.SelectedDirectorId;
                 movie.Production = model.Production;
                 movie.Genere = model.Genere;
                 movie.Rating = model.Rating;

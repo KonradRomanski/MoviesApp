@@ -5,7 +5,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Id</th>
+            <th>Number</th>
             <th>Name</th>
             <th>Surname</th>
             <th>Date of birth</th>
@@ -15,10 +15,14 @@
         </tr>
     </thead>
     <tbody>
+        @{
+
+            var rowNumber = 1;
+        }
         @foreach (var director in Model)
         {
             <tr>
-                <td>@director.Id</td>
+                <td>@(rowNumber++)</td>
                 <td>@director.Name</td>
                 <td>@director.Surname</td>
                 <td>@director.DateOfBirth.ToString("ddd dd MMMM yyyy")</td>

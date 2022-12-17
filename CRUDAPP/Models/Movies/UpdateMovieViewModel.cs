@@ -1,4 +1,6 @@
 ﻿using System;
+using CRUDAPP.Models.Domain;
+
 namespace CRUDAPP.Models
 {
     public class UpdateMovieViewModel: IMovie
@@ -9,6 +11,9 @@ namespace CRUDAPP.Models
         public DateTime Production { get; set; }
         public string Genere { get; set; }
         public int Rating { get; set; }
+
+        public List<Director> Directors { get; set; }
+        public Guid SelectedDirectorId { get; set; }
     }
 }
 

@@ -1,5 +1,7 @@
 ﻿using System;
-namespace CRUDAPP.Models.Director
+using CRUDAPP.Models.Directors;
+
+namespace CRUDAPP.Models.Directors
 {
     public class AddDirectorViewModel : IDirector
     {

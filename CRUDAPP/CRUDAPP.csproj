@@ -15,7 +15,6 @@
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
     <None Remove="Views\Movies\" />
     <None Remove="Models\Movies\" />
-    <None Remove="Models\Director\" />
     <None Remove="Views\Directors\" />
     <None Remove="Microsoft.EntityFrameworkCore.Analyzers" />
   </ItemGroup>
@@ -34,7 +33,6 @@
     <Folder Include="Models\Domain\" />
     <Folder Include="Views\Movies\" />
     <Folder Include="Models\Movies\" />
-    <Folder Include="Models\Director\" />
     <Folder Include="Views\Directors\" />
   </ItemGroup>
 </Project>

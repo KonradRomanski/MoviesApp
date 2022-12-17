@@ -17,14 +17,41 @@ namespace CRUDAPP.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.1");
 
+            modelBuilder.Entity("CRUDAPP.Models.Domain.Director", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("DateOfDeath")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<float>("Rating")
+                        .HasColumnType("REAL");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Directors");
+                });
+
             modelBuilder.Entity("CRUDAPP.Models.Domain.Movie", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Director")
-                        .IsRequired()
+                    b.Property<Guid>("DirectorId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Genere")
@@ -43,7 +70,23 @@ namespace CRUDAPP.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("DirectorId");
+
                     b.ToTable("Movies");
+                });
+
+            modelBuilder.Entity("CRUDAPP.Models.Domain.Movie", b =>
+                {
+                    b.HasOne("CRUDAPP.Models.Domain.Director", null)
+                        .WithMany("Movies")
+                        .HasForeignKey("DirectorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("CRUDAPP.Models.Domain.Director", b =>
+                {
+                    b.Navigation("Movies");
                 });
 #pragma warning restore 612, 618
         }

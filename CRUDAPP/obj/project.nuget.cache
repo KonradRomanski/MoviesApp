@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wyyS7byQRlf3ziCqzUCmcqO3KU7xZzld2r/lmT8nxF66xRVunkHRgx5FlbEIjYUsgN36judg0dx6C0TJ2Q0WNg==",
+  "dgSpecHash": "HYsuvKsTSlH0uiiALQ1e2ziWPllOQI5NnvdzwPkWnJmvx2YFCGGvjXxifTn2jbzNJXF+HGFeoN9iKs/tW3h7WQ==",
   "success": true,
-  "projectFilePath": "/Users/konrad/Documents/PUT/PUT VII/PW/Project/CRUDAPP/CRUDAPP/CRUDAPP.csproj",
+  "projectFilePath": "/Users/konrad/Documents/PUT/PUT VII/PW/MoviesApp/CRUDAPP/CRUDAPP.csproj",
   "expectedPackageFiles": [
     "/Users/konrad/.nuget/packages/azure.core/1.24.0/azure.core.1.24.0.nupkg.sha512",
     "/Users/konrad/.nuget/packages/azure.identity/1.6.0/azure.identity.1.6.0.nupkg.sha512",

@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "CRUDAPP/1.0.0": {
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "7.0.1",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.0",

@@ -1,5 +1,14 @@
 ﻿@model CRUDAPP.Models.AddMovieViewModel
 
+
+@{
+    var directorsList = Model.Directors.Select(d => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem
+    {
+        Value = d.Id.ToString(),
+        Text = d.Name + " " + d.Surname
+    });
+}
+
 <h1>Add a new movie</h1>
 <form method="post" action="Add" class="mt-5">
     <div class="mb-3">
@@ -8,7 +17,9 @@
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Director</label>
-        <input type="text" class="form-control" asp-for="Director">
+        <select class="form-control" asp-for="SelectedDirectorId" asp-items="directorsList">
+            <option value="">Select a director</option>
+        </select>
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Production date</label>

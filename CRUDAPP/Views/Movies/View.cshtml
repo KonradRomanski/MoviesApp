@@ -1,6 +1,14 @@
 ﻿@model CRUDAPP.Models.UpdateMovieViewModel
 
-<h1>Add a new movie</h1>
+@{
+    var directorsList = Model.Directors.Select(d => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem
+    {
+        Value = d.Id.ToString(),
+        Text = d.Name + " " + d.Surname
+    });
+}
+
+<h1>Edit a new movie</h1>
 <form method="post" action="Add" class="mt-5">
     <div class="mb-3">
         <label for="" class="form-label">Id</label>
@@ -12,7 +20,9 @@
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Director</label>
-        <input type="text" class="form-control" asp-for="Director">
+        <select class="form-control" asp-for="SelectedDirectorId" asp-items="directorsList">
+            <option value="">Select a director</option>
+        </select>
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Production date</label>
@@ -31,6 +41,8 @@
         <button type="submit" class="btn btn-primary mb-3">Submit</button>
         <button type="submit" class="btn btn-danger mb-3"
                 asp-action="Delete"
-                asp-controller="Movies">Delete</button>
+                asp-controller="Movies">
+            Delete
+        </button>
     </div>
 </form>

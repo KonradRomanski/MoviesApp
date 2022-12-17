@@ -1,0 +1,66 @@
+﻿@model CRUDAPP.Models.Directors.UpdateDirectorViewModel
+
+<h1>Director details</h1>
+<form method="post" action="View" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label">Id</label>
+        <input type="text" class="form-control" asp-for="Id" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Surname</label>
+        <input type="text" class="form-control" asp-for="Surname">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">DateOfBirth</label>
+        <input type="date" class="form-control" asp-for="DateOfBirth">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">DateOfDeath</label>
+        <input type="date" class="form-control" asp-for="DateOfDeath">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Rating</label>
+        <input type="number" class="form-control" asp-for="Rating">
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Submit</button>
+        <button type="submit" class="btn btn-danger mb-3"
+                asp-action="Delete"
+                asp-controller="Directors">
+            Delete
+        </button>
+    </div>
+</form>
+@if (Model.Movies?.Any() == true)
+{
+    <h2>Movies</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Production date</th>
+                <th>Genre</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var movie in Model.Movies)
+            {
+                <tr>
+                    <td>@movie.Title</td>
+                    <td>@movie.Production.ToString("dd MMMM yyyy")</td>
+                    <td>@movie.Genere</td>
+                    <td>@movie.Rating</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>This director has no movies.</p>
+}

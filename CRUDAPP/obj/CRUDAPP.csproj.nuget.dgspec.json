@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/konrad/Documents/PUT/PUT VII/PW/Project/CRUDAPP/CRUDAPP/CRUDAPP.csproj": {}
+    "/Users/konrad/Documents/PUT/PUT VII/PW/MoviesApp/CRUDAPP/CRUDAPP.csproj": {}
   },
   "projects": {
-    "/Users/konrad/Documents/PUT/PUT VII/PW/Project/CRUDAPP/CRUDAPP/CRUDAPP.csproj": {
+    "/Users/konrad/Documents/PUT/PUT VII/PW/MoviesApp/CRUDAPP/CRUDAPP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/konrad/Documents/PUT/PUT VII/PW/Project/CRUDAPP/CRUDAPP/CRUDAPP.csproj",
+        "projectUniqueName": "/Users/konrad/Documents/PUT/PUT VII/PW/MoviesApp/CRUDAPP/CRUDAPP.csproj",
         "projectName": "CRUDAPP",
-        "projectPath": "/Users/konrad/Documents/PUT/PUT VII/PW/Project/CRUDAPP/CRUDAPP/CRUDAPP.csproj",
+        "projectPath": "/Users/konrad/Documents/PUT/PUT VII/PW/MoviesApp/CRUDAPP/CRUDAPP.csproj",
         "packagesPath": "/Users/konrad/.nuget/packages/",
-        "outputPath": "/Users/konrad/Documents/PUT/PUT VII/PW/Project/CRUDAPP/CRUDAPP/obj/",
+        "outputPath": "/Users/konrad/Documents/PUT/PUT VII/PW/MoviesApp/CRUDAPP/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/konrad/.nuget/NuGet/NuGet.Config"
@@ -38,6 +38,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Analyzers": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.0, )"

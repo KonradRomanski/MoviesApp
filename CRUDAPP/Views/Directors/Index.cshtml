@@ -10,6 +10,7 @@
             <th>Surname</th>
             <th>Date of birth</th>
             <th>Date of death</th>
+            <th>Years lived</th>
             <th>Rating</th>
             <th> </th>
         </tr>
@@ -27,8 +28,9 @@
                 <td>@director.Surname</td>
                 <td>@director.DateOfBirth.ToString("ddd dd MMMM yyyy")</td>
                 <td>@(director.DateOfDeath?.ToString("ddd dd MMMM yyyy") ?? "-")</td>
+                <td>@((director.DateOfDeath.HasValue ? Math.Round((director.DateOfDeath.Value - director.DateOfBirth).TotalDays / 365) : Math.Round((DateTime.Now - director.DateOfBirth).TotalDays / 365)) + " years")</td>
                 <td>@director.Rating</td>
-                <td><a type="button" class="btn btn-light" href="Movies/View/@director.Id" Views>View</a></td>
+                <td><a type="button" class="btn btn-light" href="Directors/View/@director.Id" Views>View</a></td>
             </tr>
         }
     </tbody>

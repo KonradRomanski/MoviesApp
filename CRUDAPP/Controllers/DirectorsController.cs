@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using CRUDAPP.Data;
@@ -51,6 +52,53 @@ namespace CRUDAPP.Controllers
 
             await crudAppDbContext.Directors.AddAsync(director);
             await crudAppDbContext.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> View(Guid id)
+        {
+            var director = await crudAppDbContext.Directors.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (director != null)
+            {
+                var viewDirector = new UpdateDirectorViewModel()
+                {
+                    Id = director.Id,
+                    Name = director.Name,
+                    Surname = director.Surname,
+                    DateOfBirth = director.DateOfBirth,
+                    DateOfDeath = director.DateOfDeath,
+                    Rating = director.Rating,
+                    Movies = director.Movies
+                };
+                Console.WriteLine(viewDirector.Movies);
+                return await Task.Run(() => View("View", viewDirector));
+            }
+            else
+            {
+                return RedirectToAction("View");
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> View(UpdateDirectorViewModel model)
+        {
+            var director = await crudAppDbContext.Directors.FindAsync(model.Id);
+
+            if (director != null)
+            {
+                director.Id = model.Id;
+                director.Name = model.Name;
+                director.Surname = model.Surname;
+                director.DateOfBirth = model.DateOfBirth;
+                director.DateOfDeath = model.DateOfDeath;
+                director.Rating = model.Rating;
+
+                await crudAppDbContext.SaveChangesAsync();
+
+            }
+
             return RedirectToAction("Index");
         }
     }

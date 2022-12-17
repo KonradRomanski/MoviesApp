@@ -5,7 +5,7 @@
     var directorsList = Model.Directors.Select(d => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem
     {
         Value = d.Id.ToString(),
-        Text = d.Name
+        Text = d.Name + " " + d.Surname
     });
 }
 

@@ -52,6 +52,11 @@ namespace CRUDAPP.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(AddMovieViewModel AddMovieReques)
         {
+            var director = await crudAppDbContext.Directors.FindAsync(AddMovieReques.SelectedDirectorId);
+            if (director == null)
+            {
+                return NotFound("Director not found");
+            }
             var movie = new Movie()
             {
                 Id = Guid.NewGuid(),
@@ -61,6 +66,9 @@ namespace CRUDAPP.Controllers
                 Genere = AddMovieReques.Genere,
                 Rating = AddMovieReques.Rating
             };
+            director.Movies = director.Movies ?? new List<Movie>();
+            director.Movies.Add(movie);
+
 
             await crudAppDbContext.Movies.AddAsync(movie);
             await crudAppDbContext.SaveChangesAsync();

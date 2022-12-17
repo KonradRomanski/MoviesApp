@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using CRUDAPP.Data;
 using CRUDAPP.Models;
 using CRUDAPP.Models.Domain;
@@ -27,9 +27,11 @@ namespace CRUDAPP.Controllers
         public CRUDAPPDbContext CrudAppDbContext { get; set; }
 
         [HttpGet]
-        public IActionResult Add()
+        public async Task<IActionResult> Add()
         {
-            return View();
+            var directors = await crudAppDbContext.Directors.ToListAsync();
+            var viewModel = new AddMovieViewModel { Directors = directors };
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -39,7 +41,7 @@ namespace CRUDAPP.Controllers
             {
                 Id = Guid.NewGuid(),
                 Title = AddMovieReques.Title,
-                DirectorId = AddMovieReques.DirectorId,
+                DirectorId = AddMovieReques.SelectedDirectorId,
                 Production = AddMovieReques.Production,
                 Genere = AddMovieReques.Genere,
                 Rating = AddMovieReques.Rating

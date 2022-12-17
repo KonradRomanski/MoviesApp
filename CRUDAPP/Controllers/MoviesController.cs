@@ -67,7 +67,7 @@ namespace CRUDAPP.Controllers
                 Rating = AddMovieReques.Rating
             };
             director.Movies = director.Movies ?? new List<Movie>();
-            director.Movies.Add(movie);
+            //director.Movies.Add(movie);
 
 
             await crudAppDbContext.Movies.AddAsync(movie);

@@ -17,6 +17,7 @@
     <None Remove="Models\Movies\" />
     <None Remove="Models\Director\" />
     <None Remove="Views\Directors\" />
+    <None Remove="Microsoft.EntityFrameworkCore.Analyzers" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" />
@@ -26,6 +27,7 @@
     </PackageReference>
     <PackageReference Include="Npgsql" Version="7.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="7.0.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />

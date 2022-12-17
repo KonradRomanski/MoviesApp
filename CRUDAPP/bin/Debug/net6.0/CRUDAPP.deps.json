@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "CRUDAPP/1.0.0": {
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.Analyzers": "7.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "7.0.1",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.0",
@@ -114,22 +115,22 @@
           "runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-arm",
             "assetType": "native",
-            "fileVersion": "5.0.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "5.0.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "5.0.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "5.0.1.0"
+            "fileVersion": "0.0.0.0"
           }
         }
       },

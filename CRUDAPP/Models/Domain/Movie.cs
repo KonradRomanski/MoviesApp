@@ -1,4 +1,6 @@
 ﻿using System;
+using CRUDAPP.Models.Movies;
+
 namespace CRUDAPP.Models.Domain
 {
     public class Movie : IMovie
@@ -6,7 +8,7 @@ namespace CRUDAPP.Models.Domain
         public Guid Id { get; set; }
         public string Title { get; set; }
         public DateTime Production { get; set; }
-        public string Genere { get; set; }
+        public EMovieType Types { get; set; }
         public int Rating { get; set; }
 
         public Guid DirectorId { get; set; }

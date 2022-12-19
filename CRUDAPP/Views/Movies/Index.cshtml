@@ -9,7 +9,7 @@
             <th>Title</th>
             <th>Director</th>
             <th>Production date</th>
-            <th>Genere</th>
+            <th>Type</th>
             <th>Rating</th>
             <th> </th>
         </tr>
@@ -25,7 +25,7 @@
                 <td>@movie.Title</td>
                 <td>@movie.Director.Name @movie.Director.Surname</td>
                 <td>@movie.Production.ToString("ddd dd MMMM yyyy")</td>
-                <td>@movie.Genere</td>
+                <td>@movie.Types</td>
                 <td>@movie.Rating</td>
                 <td><a type="button" class="btn btn-light" href="Movies/View/@movie.Id" Views>View</a></td>
             </tr>

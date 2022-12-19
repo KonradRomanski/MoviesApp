@@ -1,5 +1,6 @@
 ﻿using System;
 using CRUDAPP.Models.Domain;
+using CRUDAPP.Models.Movies;
 
 namespace CRUDAPP.Models
 {
@@ -8,7 +9,7 @@ namespace CRUDAPP.Models
         public string Title { get; set; }
         public Guid DirectorId { get; set; }
         public DateTime Production { get; set; }
-        public string Genere { get; set; }
+        public EMovieType Types { get; set; }
         public int Rating { get; set; }
 
         public List<Director> Directors { get; set; }

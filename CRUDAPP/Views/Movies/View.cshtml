@@ -1,4 +1,5 @@
-﻿@model CRUDAPP.Models.UpdateMovieViewModel
+﻿@using CRUDAPP.Models.Movies
+@model CRUDAPP.Models.UpdateMovieViewModel
 
 @{
     var directorsList = Model.Directors.Select(d => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem
@@ -29,8 +30,9 @@
         <input type="date" class="form-control" asp-for="Production">
     </div>
     <div class="mb-3">
-        <label for="" class="form-label">Genere</label>
-        <input type="text" class="form-control" asp-for="Genere">
+        <label for="" class="form-label">Type</label>
+        <select class="form-control" asp-for="Types" asp-items="Html.GetEnumSelectList<EMovieType>()">
+        </select>
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Rating</label>

@@ -3,6 +3,7 @@ using System;
 using CRUDAPP.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CRUDAPP.Migrations
 {
     [DbContext(typeof(CRUDAPPDbContext))]
-    partial class CRUDAPPDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221217173701_Update Director relation")]
+    partial class UpdateDirectorrelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.1");
@@ -54,6 +57,10 @@ namespace CRUDAPP.Migrations
                     b.Property<Guid>("DirectorId")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Genere")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("Production")
                         .HasColumnType("TEXT");
 
@@ -63,9 +70,6 @@ namespace CRUDAPP.Migrations
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("Types")
-                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 

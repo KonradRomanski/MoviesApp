@@ -31,7 +31,7 @@ namespace CRUDAPP.Controllers
                 Id = m.Movie.Id,
                 Title = m.Movie.Title,
                 Production = m.Movie.Production,
-                Genere = m.Movie.Genere,
+                Types = m.Movie.Types,
                 Rating = m.Movie.Rating,
                 Director = m.Director
             }).ToList();
@@ -63,11 +63,11 @@ namespace CRUDAPP.Controllers
                 Title = AddMovieReques.Title,
                 DirectorId = AddMovieReques.SelectedDirectorId,
                 Production = AddMovieReques.Production,
-                Genere = AddMovieReques.Genere,
+                Types = AddMovieReques.Types,
                 Rating = AddMovieReques.Rating
             };
             director.Movies = director.Movies ?? new List<Movie>();
-            director.Movies.Add(movie);
+            //director.Movies.Add(movie);
 
 
             await crudAppDbContext.Movies.AddAsync(movie);
@@ -88,7 +88,7 @@ namespace CRUDAPP.Controllers
                     Title = movie.Title,
                     DirectorId = movie.DirectorId,
                     Production = movie.Production,
-                    Genere = movie.Genere,
+                    Types = movie.Types,
                     Rating = movie.Rating,
                     Directors = await crudAppDbContext.Directors.ToListAsync(),
                     SelectedDirectorId = movie.DirectorId
@@ -113,7 +113,7 @@ namespace CRUDAPP.Controllers
                 movie.Title = model.Title;
                 movie.DirectorId = model.SelectedDirectorId;
                 movie.Production = model.Production;
-                movie.Genere = model.Genere;
+                movie.Types = model.Types;
                 movie.Rating = model.Rating;
 
                 await crudAppDbContext.SaveChangesAsync();

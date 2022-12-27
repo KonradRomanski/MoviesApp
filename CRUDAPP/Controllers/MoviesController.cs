@@ -21,11 +21,49 @@ namespace CRUDAPP.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
+            // Set the default sort order to title ascending
+            sortOrder = String.IsNullOrEmpty(sortOrder) ? "title_asc" : sortOrder;
+
             var movies = from m in crudAppDbContext.Movies
                          join d in crudAppDbContext.Directors on m.DirectorId equals d.Id
                          select new { Movie = m, Director = d };
+
+            switch (sortOrder)
+            {
+                case "title_asc":
+                    movies = movies.OrderBy(m => m.Movie.Title);
+                    break;
+                case "title_desc":
+                    movies = movies.OrderByDescending(m => m.Movie.Title);
+                    break;
+                case "director_asc":
+                    movies = movies.OrderBy(m => m.Director.Name);
+                    break;
+                case "director_desc":
+                    movies = movies.OrderByDescending(m => m.Director.Name);
+                    break;
+                case "production_asc":
+                    movies = movies.OrderBy(m => m.Movie.Production);
+                    break;
+                case "production_desc":
+                    movies = movies.OrderByDescending(m => m.Movie.Production);
+                    break;
+                case "type_asc":
+                    movies = movies.OrderBy(m => m.Movie.Types);
+                    break;
+                case "type_desc":
+                    movies = movies.OrderByDescending(m => m.Movie.Types);
+                    break;
+                case "rating_asc":
+                    movies = movies.OrderBy(m => m.Movie.Rating);
+                    break;
+                case "rating_desc":
+                    movies = movies.OrderByDescending(m => m.Movie.Rating);
+                    break;
+            }
+
             var viewModel = movies.Select(m => new ShowMovieViewModel
             {
                 Id = m.Movie.Id,
@@ -35,9 +73,12 @@ namespace CRUDAPP.Controllers
                 Rating = m.Movie.Rating,
                 Director = m.Director
             }).ToList();
+            ViewData["currentSortOrder"] = sortOrder;
 
             return View(viewModel);
         }
+
+
 
         public CRUDAPPDbContext CrudAppDbContext { get; set; }
 

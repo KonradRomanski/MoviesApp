@@ -12,6 +12,7 @@ namespace CRUDAPP.Models.Movies
         public string TypesString { get; set; }
         public int Rating { get; set; }
 
+        
         public Director Director { get; set; }
     }
 }

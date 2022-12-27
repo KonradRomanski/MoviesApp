@@ -20,25 +20,6 @@ namespace CRUDAPP.Controllers
             this.crudAppDbContext = crudAppDbContext;
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> Index()
-        //{
-        //    var movies = from m in crudAppDbContext.Movies
-        //                 join d in crudAppDbContext.Directors on m.DirectorId equals d.Id
-        //                 select new { Movie = m, Director = d };
-        //    var viewModel = movies.Select(m => new ShowMovieViewModel
-        //    {
-        //        Id = m.Movie.Id,
-        //        Title = m.Movie.Title,
-        //        Production = m.Movie.Production,
-        //        Types = m.Movie.Types,
-        //        Rating = m.Movie.Rating,
-        //        Director = m.Director
-        //    }).ToList();
-
-        //    return View(viewModel);
-        //}
-
         [HttpGet]
         public async Task<IActionResult> Index(string sortOrder)
         {

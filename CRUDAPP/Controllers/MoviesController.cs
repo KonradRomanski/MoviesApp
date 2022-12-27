@@ -21,14 +21,25 @@ namespace CRUDAPP.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index(string sortOrder)
+        public async Task<IActionResult> Index(string sortOrder, string searchTerm)
         {
             // Set the default sort order to title ascending
             sortOrder = String.IsNullOrEmpty(sortOrder) ? "title_asc" : sortOrder;
 
-            var movies = from m in crudAppDbContext.Movies
-                         join d in crudAppDbContext.Directors on m.DirectorId equals d.Id
+            var movies = from m in crudAppDbContext.Movies.AsEnumerable()
+                         join d in crudAppDbContext.Directors.AsEnumerable() on m.DirectorId equals d.Id
                          select new { Movie = m, Director = d };
+
+            if (!String.IsNullOrEmpty(searchTerm))
+            {
+                searchTerm = searchTerm.ToLower();
+                movies = movies.Where(m => m.Movie.Title.ToLower().Contains(searchTerm)
+                                        || m.Director.Name.ToLower().Contains(searchTerm)
+                                        || m.Director.Surname.ToLower().Contains(searchTerm)
+                                        || m.Movie.Types.ToString().ToLower().IndexOf(searchTerm) >= 0);
+            }
+
+
 
             switch (sortOrder)
             {
@@ -74,6 +85,7 @@ namespace CRUDAPP.Controllers
                 Director = m.Director
             }).ToList();
             ViewData["currentSortOrder"] = sortOrder;
+            ViewData["currentSearchTerm"] = searchTerm;
 
             return View(viewModel);
         }

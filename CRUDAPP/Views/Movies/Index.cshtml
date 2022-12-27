@@ -1,9 +1,10 @@
-﻿    @model List<CRUDAPP.Models.Movies.ShowMovieViewModel>
+﻿@model List<CRUDAPP.Models.Movies.ShowMovieViewModel>
 
-    <h1>Movies list</h1>
-    <form method="get">
-        <label for="sortOrder">Sort by:</label>
-        <select id="sortOrder" name="sortOrder" onchange="this.form.submit()" asp-for='@ViewData["currentSortOrder"]'>
+<h1>Movies list</h1>
+<div class="d-flex flex-row">
+    <form method="get" class="form-inline p-3">
+        <label for="sortOrder" class="mr-sm-2">Sort by:</label>
+        <select id="sortOrder" name="sortOrder" onchange="this.form.submit()" asp-for='@ViewData["currentSortOrder"]' class="form-control mr-sm-2">
             <option value="title_asc">Title (ascending)</option>
             <option value="title_desc">Title (descending)</option>
             <option value="director_asc">Director (ascending)</option>
@@ -16,35 +17,47 @@
             <option value="rating_desc">Rating (descending)</option>
         </select>
     </form>
+    <form method="get" class="form-inline p-3">
+        <label for="searchTerm" class="mr-sm-2">Search:</label>
+        <div class="d-flex flex-row">
+            <input type="text" id="searchTerm" name="searchTerm" asp-for='@ViewData["currentSearchTerm"]' class="form-control mr-sm-2">
+            <input type="submit" value="Search" class="btn btn-primary ms-2">
 
-    <table class="table">
-        <thead>
+        </div>
+    </form>
+
+</div>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Number</th>
+            <th>Title</th>
+            <th>Director</th>
+            <th>Production date</th>
+            <th>Type</th>
+            <th>Rating</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var rowNumber = 1;
+        }
+        @foreach (var movie in Model)
+        {
             <tr>
-                <th>Number</th>
-                <th>Title</th>
-                <th>Director</th>
-                <th>Production date</th>
-                <th>Type</th>
-                <th>Rating</th>
-                <th> </th>
+                <td>@(rowNumber++)</td>
+                <td>@movie.Title</td>
+                <td>@movie.Director.Name @movie.Director.Surname</td>
+                <td>@movie.Production.ToString("ddd dd MMMM yyyy")</td>
+                <td>@movie.Types</td>
+                <td>@movie.Rating</td>
+                <td><a type="button" class="btn btn-light" href="Movies/View/@movie.Id" Views>View</a></td>
             </tr>
-        </thead>
-        <tbody>
-            @{
-                var rowNumber = 1;
-            }
-            @foreach (var movie in Model)
-            {
-                <tr>
-                    <td>@(rowNumber++)</td>
-                    <td>@movie.Title</td>
-                    <td>@movie.Director.Name @movie.Director.Surname</td>
-                    <td>@movie.Production.ToString("ddd dd MMMM yyyy")</td>
-                    <td>@movie.Types</td>
-                    <td>@movie.Rating</td>
-                    <td><a type="button" class="btn btn-light" href="Movies/View/@movie.Id" Views>View</a></td>
-                </tr>
-            }
-        </tbody>
-    </table>
+        }
+    </tbody>
+</table>
 

@@ -36,7 +36,9 @@ namespace CRUDAPP.Controllers
                 movies = movies.Where(m => m.Movie.Title.ToLower().Contains(searchTerm)
                                         || m.Director.Name.ToLower().Contains(searchTerm)
                                         || m.Director.Surname.ToLower().Contains(searchTerm)
-                                        || m.Movie.Types.ToString().ToLower().IndexOf(searchTerm) >= 0);
+                                        || m.Movie.Types.ToString().ToLower().IndexOf(searchTerm) >= 0
+                                        || m.Movie.Production.ToString("ddd dd MMMM yyyy").ToLower().Contains(searchTerm)
+                                        || m.Movie.Rating.ToString().ToLower().Contains(searchTerm));
             }
 
 

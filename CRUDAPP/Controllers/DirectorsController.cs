@@ -33,8 +33,11 @@ namespace CRUDAPP.Controllers
             {
                 searchTerm = searchTerm.ToLower();
                 directors = directors.Where(m => m.Director.Name.ToLower().Contains(searchTerm)
-                                        || m.Director.Surname.ToLower().Contains(searchTerm)
-                                        || m.Director.DateOfBirth.ToString("ddd dd MMMM yyyy").ToLower().Contains(searchTerm));
+                                                || m.Director.Surname.ToLower().Contains(searchTerm)
+                                                || m.Director.DateOfBirth.ToString("ddd dd MMMM yyyy").ToLower().Contains(searchTerm)
+                                                || (m.Director.DateOfDeath != null && m.Director.DateOfDeath.ToString().ToLower().Contains(searchTerm))
+                                                || m.Director.Rating.ToString().ToLower().Contains(searchTerm));
+
             }
 
             switch (sortOrder)

@@ -25,10 +25,58 @@ namespace CRUDAPP.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchTerm)
         {
-            var directors = await crudAppDbContext.Directors.ToListAsync();
-            return View(directors);
+            var directors = from d in crudAppDbContext.Directors.AsEnumerable() select new { Director = d};
+
+            if (!String.IsNullOrEmpty(searchTerm))
+            {
+                searchTerm = searchTerm.ToLower();
+                directors = directors.Where(m => m.Director.Name.ToLower().Contains(searchTerm)
+                                        || m.Director.Surname.ToLower().Contains(searchTerm)
+                                        || m.Director.DateOfBirth.ToString("ddd dd MMMM yyyy").ToLower().Contains(searchTerm));
+            }
+
+            switch (sortOrder)
+            {
+                case "name_asc":
+                    directors = directors.OrderBy(d => d.Director.Name);
+                    break;
+                case "name_desc":
+                    directors = directors.OrderByDescending(d => d.Director.Name);
+                    break;
+                case "surname_asc":
+                    directors = directors.OrderBy(d => d.Director.Surname);
+                    break;
+                case "surname_desc":
+                    directors = directors.OrderByDescending(d => d.Director.Surname);
+                    break;
+                case "dateofbirth_asc":
+                    directors = directors.OrderBy(d => d.Director.DateOfBirth);
+                    break;
+                case "dateofbirth_desc":
+                    directors = directors.OrderByDescending(d => d.Director.DateOfBirth);
+                    break;
+                case "dateofdeath_asc":
+                    directors = directors.OrderBy(d => d.Director.DateOfDeath);
+                    break;
+                case "dateofdeath_desc":
+                    directors = directors.OrderByDescending(d => d.Director.DateOfDeath);
+                    break;
+                case "rating_asc":
+                    directors = directors.OrderBy(d => d.Director.Rating);
+                    break;
+                case "rating_desc":
+                    directors = directors.OrderByDescending(d => d.Director.Rating);
+                    break;
+            }
+
+            var viewModel = directors.Select(d => d.Director).ToList();
+
+
+            ViewData["currentSortOrder"] = sortOrder;
+            ViewData["currentSearchTerm"] = searchTerm;
+            return View(viewModel);
         }
 
         [HttpGet]

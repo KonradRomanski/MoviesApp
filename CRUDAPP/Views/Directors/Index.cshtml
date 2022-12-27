@@ -2,6 +2,34 @@
 
 <h1>Directors list</h1>
 
+<h1>Movies list</h1>
+<div class="d-flex flex-row">
+    <form method="get" class="form-inline p-3">
+        <label for="sortOrder" class="mr-sm-2">Sort by:</label>
+        <select id="sortOrder" name="sortOrder" onchange="this.form.submit()" asp-for='@ViewData["currentSortOrder"]' class="form-control mr-sm-2">
+            <option value="name_asc">Name (ascending)</option>
+            <option value="name_desc">Name (descending)</option>
+            <option value="surname_asc">Surname (ascending)</option>
+            <option value="surname_desc">Surname (descending)</option>
+            <option value="dateofbirth_asc">Date of birth (ascending)</option>
+            <option value="dateofbirth_desc">Date of birth (descending)</option>
+            <option value="dateofdeath_asc">Date of death (ascending)</option>
+            <option value="dateofdeath_desc">Date of death (descending)</option>
+            <option value="rating_asc">Rating (ascending)</option>
+            <option value="rating_desc">Rating (descending)</option>
+        </select>
+    </form>
+    <form method="get" class="form-inline p-3">
+        <label for="searchTerm" class="mr-sm-2">Search:</label>
+        <div class="d-flex flex-row">
+            <input type="text" id="searchTerm" name="searchTerm" asp-for='@ViewData["currentSearchTerm"]' class="form-control mr-sm-2">
+            <input type="submit" value="Search" class="btn btn-primary ms-2">
+
+        </div>
+    </form>
+
+</div>
+
 <table class="table">
     <thead>
         <tr>

@@ -11,6 +11,7 @@ namespace CRUDAPP.Models.Directors
         public DateTime DateOfBirth { get; set; }
         public DateTime? DateOfDeath { get; set; }
         public float Rating { get; set; }
+        public string? Link { get; set; }
     }
 }
 

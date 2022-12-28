@@ -10,6 +10,7 @@ namespace CRUDAPP.Models.Domain
         public DateTime Production { get; set; }
         public EMovieType Types { get; set; }
         public int Rating { get; set; }
+        public string? Link { get; set; }
 
         public Guid DirectorId { get; set; }
         public Director Director { get; set; }

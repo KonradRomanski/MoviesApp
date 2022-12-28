@@ -9,6 +9,7 @@ namespace CRUDAPP.Models
         public DateTime Production { get; set; }
         public EMovieType Types { get; set; }
         public int Rating { get; set; }
+        public string? Link { get; set; }
     }
 }
 

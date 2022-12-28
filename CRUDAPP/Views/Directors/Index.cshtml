@@ -38,6 +38,7 @@
             <th>Date of death</th>
             <th>Years lived</th>
             <th>Rating</th>
+            <th>Link</th>
             <th> </th>
         </tr>
     </thead>
@@ -56,8 +57,15 @@
                 <td>@(director.DateOfDeath?.ToString("ddd dd MMMM yyyy") ?? "-")</td>
                 <td>@((director.DateOfDeath.HasValue ? Math.Round((director.DateOfDeath.Value - director.DateOfBirth).TotalDays / 365) : Math.Round((DateTime.Now - director.DateOfBirth).TotalDays / 365)) + " years")</td>
                 <td>@director.Rating</td>
-                <td><a type="button" class="btn btn-light" href="Directors/View/@director.Id" Views>View</a></td>
-            </tr>
+                <td>
+                    @if (!string.IsNullOrEmpty(director.Link))
+                    {
+                        <a href="@director.Link" class="btn btn-light">Click</a>
+                    }
+                </td>
+
+                    <td><a type="button" class="btn btn-light" href="Directors/View/@director.Id" Views>View</a></td>
+                </tr>
         }
     </tbody>
 </table>

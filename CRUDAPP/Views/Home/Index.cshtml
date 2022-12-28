@@ -2,8 +2,47 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
+@*<div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>*@
+<div class="card text-center mb-3">
+    @*<div class="card-header">
+        Featured
+    </div>*@
+    <div class="card-body">
+        <h5 class="card-title">Movies app</h5>
+        <p class="card-text">Welcome to the place where you can manage your movies library!</p>
+        @*<a href="#" class="btn btn-primary">Go somewhere</a>*@
+    </div>
+    @*<div class="card-footer text-muted">
+        2 days ago
+    </div>*@
 </div>
 
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Movies</h5>
+                <p class="card-text">Here you can start browsing or add new movies.</p>
+                <div class="btn-group" role="group">
+                    <a class="btn btn-primary" asp-area="" asp-controller="Movies" asp-action="Index">Show all</a>
+                    <a class="btn btn-primary border-start" asp-area="" asp-controller="Movies" asp-action="Add">+</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Directors</h5>
+                <p class="card-text">Here you can start browsing or add new directors.</p>
+                <div class="btn-group" role="group">
+                    <a class="btn btn-primary" asp-area="" asp-controller="Directors" asp-action="Index">Show all</a>
+                    <a class="btn btn-primary border-start" asp-area="" asp-controller="Directors" asp-action="Add">+</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

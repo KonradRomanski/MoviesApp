@@ -39,6 +39,7 @@
             <th>Production date</th>
             <th>Type</th>
             <th>Rating</th>
+            <th>Link</th>
             <th> </th>
         </tr>
     </thead>
@@ -55,6 +56,12 @@
                 <td>@movie.Production.ToString("ddd dd MMMM yyyy")</td>
                 <td>@movie.Types</td>
                 <td>@movie.Rating</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(movie.Link))
+                    {
+                        <a href="@movie.Link" class="btn btn-light">Click</a>
+                    }
+                </td>
                 <td><a type="button" class="btn btn-light" href="Movies/View/@movie.Id" Views>View</a></td>
             </tr>
         }

@@ -11,8 +11,8 @@ namespace CRUDAPP.Models.Movies
         public EMovieType Types { get; set; }
         public string TypesString { get; set; }
         public int Rating { get; set; }
+        public string? Link { get; set; }
 
-        
         public Director Director { get; set; }
     }
 }

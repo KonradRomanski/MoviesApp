@@ -12,6 +12,7 @@ namespace CRUDAPP.Models.Directors
         public DateTime? DateOfDeath { get; set; }
         public float Rating { get; set; }
         public ICollection<Movie> Movies { get; set; }
+        public string? Link { get; set; }
     }
 }
 

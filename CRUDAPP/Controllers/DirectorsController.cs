@@ -98,7 +98,8 @@ namespace CRUDAPP.Controllers
                 Surname = addDirectorViewModel.Surname,
                 DateOfBirth = addDirectorViewModel.DateOfBirth,
                 DateOfDeath = addDirectorViewModel.DateOfDeath,
-                Rating = addDirectorViewModel.Rating
+                Rating = addDirectorViewModel.Rating,
+                Link = addDirectorViewModel.Link
             };
 
             await crudAppDbContext.Directors.AddAsync(director);
@@ -121,7 +122,8 @@ namespace CRUDAPP.Controllers
                     DateOfBirth = director.DateOfBirth,
                     DateOfDeath = director.DateOfDeath,
                     Rating = director.Rating,
-                    Movies = director.Movies
+                    Movies = director.Movies,
+                    Link = director.Link
                 };
                 Console.WriteLine(viewDirector.Movies);
                 return await Task.Run(() => View("View", viewDirector));
@@ -145,6 +147,7 @@ namespace CRUDAPP.Controllers
                 director.DateOfBirth = model.DateOfBirth;
                 director.DateOfDeath = model.DateOfDeath;
                 director.Rating = model.Rating;
+                director.Link = model.Link;
 
                 await crudAppDbContext.SaveChangesAsync();
 
